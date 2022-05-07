@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <>  <div class="bg-white">
             <div class="max-w-screen-2xl mx-auto">
-                <div class="flex flex-col items-center bg-gray-100 rounded-lg p-4 sm:p-8">
+                <div class="flex flex-col items-center bg-gray-50 rounded-lg p-4 sm:p-8">
                     <div class="mb-4 sm:mb-8">
                         <h2 class="text-gray-600 text-xl sm:text-2xl lg:text-3xl font-bold text-center">Get the latest updates</h2>
                         <p class="text-gray-500 text-center">Sign up for our newsletter</p>

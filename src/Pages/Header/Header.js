@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BigGallery from '../Gallery/Gallery';
+import Inventory from '../Inventory/Inventory';
 import Reviews from '../Reviews/Reviews';
+import Starts from '../Starts/Starts';
 
 const Header = () => {
     return (
@@ -69,7 +71,8 @@ const Header = () => {
                     </section>
                 </div>
             </div>
-
+            <Starts></Starts>
+            <Inventory></Inventory>
             <BigGallery></BigGallery>
             <Reviews></Reviews>
 
