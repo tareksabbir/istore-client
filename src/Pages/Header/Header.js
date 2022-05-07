@@ -1,4 +1,5 @@
 import React from 'react';
+import Reviews from '../Reviews/Reviews';
 
 const Header = () => {
     return (
@@ -66,8 +67,7 @@ const Header = () => {
                     </section>
                 </div>
             </div>
-
-
+            <Reviews></Reviews>
         </>
     );
 };
