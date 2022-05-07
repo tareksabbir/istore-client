@@ -24,10 +24,10 @@ const Navbar = () => {
 
             <nav className="hidden lg:flex gap-12">
                 <Link to='/' className=" text-black text-lg font-semibold">Home</Link>
-                <Link to='/bigallery' className="text-gray-500 hover:text-black active:text-indigo-700 text-lg font-semibold transition duration-100">Inventory</Link>
+                <Link to='/manageItem' className="text-gray-500 hover:text-black active:text-indigo-700 text-lg font-semibold transition duration-100">Inventory</Link>
 
-                <Link to='/pricing' className="text-gray-500 hover:text-black active:text-indigo-700 text-lg font-semibold transition duration-100">My Items</Link>
-                <Link to='/pricing' className="text-gray-500 hover:text-black active:text-indigo-700 text-lg font-semibold transition duration-100">Add Item</Link>
+                <Link to='/myItem' className="text-gray-500 hover:text-black active:text-indigo-700 text-lg font-semibold transition duration-100">My Items</Link>
+                <Link to='/addItem' className="text-gray-500 hover:text-black active:text-indigo-700 text-lg font-semibold transition duration-100">Add Item</Link>
                 <Link to='/blog' className="text-gray-500 hover:text-black active:text-indigo-700 text-lg font-semibold transition duration-100">Blogs</Link>
                 <Link to='/about' className="text-gray-500 hover:text-black active:text-indigo-700 text-lg font-semibold transition duration-100">About</Link>
 

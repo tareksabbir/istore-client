@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 
+
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -42,6 +43,7 @@ const Register = () => {
 
     if (user) {
         navigate('/');
+
     }
 
 
