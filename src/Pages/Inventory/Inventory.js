@@ -31,13 +31,9 @@ const Inventory = () => {
                                         <div class="flex items-center mt-6">
                                             <div>
                                                 <p class="text-sm font-medium text-neutral-600">
-                                                    <a href="https://twitter.com/Mike_Andreuzza" class="hover:underline"> Michaerl Andreuzza</a>
+                                                    Michaerl Andreuzza
                                                 </p>
-                                                <div class="flex space-x-1 text-sm text-gray-500">
-                                                    <time datetime="2022-05-6"> May 6, 2022 </time>
-                                                    <span aria-hidden="true"> · </span>
-                                                    <span> 6 min read </span>
-                                                </div>
+
                                             </div>
 
                                         </div>
