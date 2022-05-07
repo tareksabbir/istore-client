@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import BigGallery from '../Gallery/Gallery';
 import Reviews from '../Reviews/Reviews';
 
 const Header = () => {
@@ -19,11 +21,11 @@ const Header = () => {
                                 <h1 class="text-black-800 text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">Authorized Dealer In Bangladesh</h1>
 
                                 <div class="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                                    <a href="/" class="inline-block
+                                    <Link to="/contact" class="inline-block
                                      bg-black
                                      hover:bg-black active:bg-gray-500
-                                    focus-visible:ring ring-gray-400 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Contact now</a>
-                                    <a href="/" class="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-gray-400 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Take tour</a>
+                                    focus-visible:ring ring-gray-400 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Contact now</Link>
+                                    <Link to="/" class="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-gray-400 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Take tour</Link>
                                 </div>
                             </div>
 
@@ -67,7 +69,10 @@ const Header = () => {
                     </section>
                 </div>
             </div>
+
+            <BigGallery></BigGallery>
             <Reviews></Reviews>
+
         </>
     );
 };
