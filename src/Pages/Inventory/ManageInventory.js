@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const ManageInventory = () => {
     const [products, setProducts] = useState([]);
@@ -8,6 +11,26 @@ const ManageInventory = () => {
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
+
+    const handelProductDelete = id => {
+        const proceed = window.confirm('Are you sure you want to delete this product?');
+        if (proceed) {
+            console.log(id);
+            const url = `http://localhost:5000/product/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        toast('item is deleted');
+                        const remaining = products.filter(product => product._id !== id);
+                        setProducts(remaining);
+                    }
+                })
+        }
+
+    }
 
     return (
         <>
@@ -68,8 +91,9 @@ const ManageInventory = () => {
                                             </form>
 
                                             <div>
-                                                <button class="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 ">Delete</button>
+                                                <button onClick={() => handelProductDelete(product._id)} class="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 ">Delete</button>
                                             </div>
+                                            <ToastContainer />
                                             <div className='lg:mt-5'>
                                                 <button class="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Update</button>
                                             </div>
