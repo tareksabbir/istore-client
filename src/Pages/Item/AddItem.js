@@ -1,10 +1,12 @@
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+import auth from '../../firebase.init';
 
 const AddItem = () => {
-
+    const [user] = useAuthState(auth);
     const productHandle = event => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -58,7 +60,7 @@ const AddItem = () => {
 
                         <div>
                             <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email Id*</label>
-                            <input type="text" name="email" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required />
+                            <input type="text" name="email" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required value={user.email} />
                         </div>
 
                         <div className="sm:col-span-2">

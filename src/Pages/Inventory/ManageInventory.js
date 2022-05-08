@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -94,15 +95,18 @@ const ManageInventory = () => {
 
 
                                             <ToastContainer />
-                                            <div >
-                                                <button onClick={() => handelProductDelete(product._id)} className="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 lg:mt-1">Delete</button>
-                                            </div>
+
+                                            <Link to={`/update/${product._id}`}><button className=" text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16">Update</button></Link>
 
                                             <div className='lg:mt-2'>
                                                 <button type='text' className="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Restock</button>
 
                                             </div>
 
+
+                                            <div >
+                                                <button onClick={() => handelProductDelete(product._id)} className="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 lg:mt-1">Delete</button>
+                                            </div>
                                             <div className='lg:mt-2'>
                                                 <button className="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 ">Delevered</button>
                                             </div>
