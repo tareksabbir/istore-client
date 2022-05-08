@@ -15,10 +15,10 @@ const MyItems = () => {
                                     <table class="min-w-full">
                                         <thead class="bg-gray-50">
                                             <tr>
-                                                <th scope="col" class="px-6 py-3 text-s font-bold tracking-wider text-left text-black uppercase">Product Name</th>
-                                                <th scope="col" class="px-6 py-3 text-s font-bold tracking-wider text-left text-black uppercase">Supplier</th>
-                                                <th scope="col" class="px-6 py-3 text-s font-bold tracking-wider text-left text-black  uppercase">Email ID</th>
-                                                <th scope="col" class="px-6 py-3 text-s font-bold tracking-wider text-left text-black uppercase">Stocks</th>
+                                                <th scope="col" class="px-6 py-3 text-sm font-bold tracking-wider text-left text-black uppercase">Product Name</th>
+                                                <th scope="col" class="px-6 py-3 text-sm font-bold tracking-wider text-left text-black uppercase">Supplier</th>
+                                                <th scope="col" class="px-6 py-3 text-sm font-bold tracking-wider text-left text-black  uppercase">Email ID</th>
+                                                <th scope="col" class="px-6 py-3 text-sm font-bold tracking-wider text-left text-black uppercase">Stocks</th>
                                                 <th scope="col" class="relative px-6 py-3 text-black ">
                                                     <span class="sr-only">Status</span>
                                                 </th>
@@ -31,9 +31,9 @@ const MyItems = () => {
                                                 <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">Apple</td>
                                                 <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">tareksabbir4599@gmail.com</td>
                                                 <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">Total 140</td>
-                                                <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
+                                                <td class="px-6 py-4 text-sm font-bold text-right whitespace-nowrap">
                                                     <a href="/" class="text-blue-600 hover:text-blue-900">
-                                                        Delevered
+                                                        Delete
                                                     </a>
                                                 </td>
                                             </tr>
