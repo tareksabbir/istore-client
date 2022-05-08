@@ -1,4 +1,3 @@
-import userEvent from '@testing-library/user-event';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -14,6 +13,31 @@ const MyItems = () => {
             .then(data => setProducts(data));
     }, [])
     const [user] = useAuthState(auth);
+
+    const handelProductDelete = id => {
+        const proceed = window.confirm('Are you sure you want to delete this product?');
+        if (proceed) {
+            console.log(id);
+            const url = `http://localhost:5000/product/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('item is deleted');
+                        const remaining = products.filter(product => product._id !== id);
+                        setProducts(remaining);
+                    }
+                })
+        }
+
+    }
+
+
+
+
+
     return (
         <>
             <div className="mb-10 md:mb-16">
@@ -52,9 +76,7 @@ const MyItems = () => {
                                                         <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">{product.email}</td>
                                                         <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">{product.stock}</td>
                                                         <td className="px-6 py-4 text-sm font-bold text-right whitespace-nowrap">
-                                                            <a href="/" className="text-blue-600 hover:text-blue-900">
-                                                                Delete
-                                                            </a>
+                                                            <button onClick={() => handelProductDelete(product._id)} className="text-white hover:text-gray-200 active:text-gray-400 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 lg:mt-1">Delete</button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
