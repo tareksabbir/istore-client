@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
+// import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
 const ManageInventory = () => {
+
+
+
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -95,7 +99,9 @@ const ManageInventory = () => {
                                             </div>
                                             <ToastContainer />
                                             <div className='lg:mt-5'>
+                                                {/* <Link to={`/product/${product._id}`}> */}
                                                 <button class="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Update</button>
+                                                {/* </Link> */}
                                             </div>
 
 

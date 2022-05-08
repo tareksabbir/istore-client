@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 const ProductUpdate = () => {
+    const { id } = useParams();
+
     const [products, setProducts] = useState({});
     useEffect(() => {
         const url = `http://localhost:5000/product`;
@@ -13,7 +16,7 @@ const ProductUpdate = () => {
 
         <>
             <div class="mb-6 sm:mb-10 lg:mb-10">
-                <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">Manage Inventory</h2>
+                <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">Product Update {id}</h2>
             </div>
 
 
@@ -70,7 +73,9 @@ const ProductUpdate = () => {
                                         <button class="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 ">Delete</button>
                                     </div>
                                     <div className='lg:mt-5'>
-                                        <button class="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Update</button>
+                                        <Link>
+                                            <button class="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Update</button>
+                                        </Link>
                                     </div>
 
 
