@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
 const ManageInventory = () => {
-
-
 
     const [products, setProducts] = useState([]);
 
@@ -15,6 +12,7 @@ const ManageInventory = () => {
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
+
 
     const handelProductDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete this product?');
@@ -101,17 +99,13 @@ const ManageInventory = () => {
                                             </div>
 
                                             <div className='lg:mt-2'>
-                                                <button className="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Restock</button>
+                                                <button type='text' className="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Restock</button>
 
                                             </div>
 
                                             <div className='lg:mt-2'>
                                                 <button className="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 ">Delevered</button>
                                             </div>
-
-
-
-
                                         </div>
                                     </div>
                                 </div>

@@ -7,6 +7,7 @@ import Contact from './Pages/Contact/Contact';
 import Footer from './Pages/Footer/Footer';
 import Header from './Pages/Header/Header';
 import ManageInventory from './Pages/Inventory/ManageInventory';
+import UpdateProduct from './Pages/Inventory/updateProduct';
 import AddItem from './Pages/Item/AddItem';
 import MyItems from './Pages/Item/MyItems';
 import Login from './Pages/Login/Login';
@@ -30,6 +31,7 @@ function App() {
         <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/update/:id' element={<UpdateProduct></UpdateProduct>}></Route>
 
         {/* <Route path='*' element={<Error></Error>}></Route> */}
 

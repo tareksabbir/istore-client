@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Inventory = () => {
     const [products, setProducts] = useState([]);
@@ -13,13 +13,6 @@ const Inventory = () => {
     const displayContent = (text) => {
         return text.length < 60 ? text : text.slice(0, 60) + "...";
     };
-
-
-    const navigate = useNavigate();
-
-    const navigationToProductDetail = id => {
-        navigate(`/product/${id}`);
-    }
 
 
     return (
@@ -65,9 +58,8 @@ const Inventory = () => {
                                                     </div>
 
                                                 </div>
-                                                <div onClick={() => navigationToProductDetail(product._id)} className='mt-6'>
-                                                    <button className="inline-block bg-gray-800 hover:bg-gray-500  focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded outline-none transition duration-100 px-8 py-2">Update</button>
-                                                </div>
+
+                                                <Link to={`/update/${product._id}`}><button className=" mt-6 inline-block bg-gray-800 hover:bg-gray-500  focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded outline-none transition duration-100 px-8 py-2">Update</button></Link>
 
                                             </div>
                                         </div>
