@@ -15,13 +15,13 @@ Project live link  [click here](https://istores.netlify.app).
 
 ### technology
 
-*react
-*firebase hook
-*tailwind css
-*react router 
-*jwt
-*mongodb
-*heroku
+* react
+* firebase hook
+* tailwind css
+* react router 
+* jwt
+* mongodb
+* heroku
 
 
 
