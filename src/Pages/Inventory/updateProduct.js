@@ -36,17 +36,15 @@ const UpdateProduct = () => {
 
     const updateHandle = event => {
         event.preventDefault();
-        const name = event.target.name.value;
         const price = event.target.price.value;
         const stock = event.target.stock.value;
         const email = event.target.email.value;
         const img = event.target.img.value;
-        const supplier = event.target.supplier.value;
-        const description = event.target.description.value;
 
-        const updateProduct = { name, price, stock, img, description, supplier, email }
+        const updateProduct = { price, stock, img, email }
 
-        fetch('http://localhost:5000/product', {
+        const url = `http://localhost:5000/product/${id}`;
+        fetch(url, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -133,48 +131,29 @@ const UpdateProduct = () => {
 
             <form onClick={updateHandle} className="max-w-screen-md grid sm:grid-cols-2 gap-4 mx-auto">
                 <div>
-                    <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Product name*</label>
-                    <input type="text" name="name" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" />
+                    <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Product Stock*</label>
+                    <input type="text" name="stock" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required />
                 </div>
 
                 <div>
                     <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Product Price*</label>
-                    <input type="text" name="price" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" />
-                </div>
-                <div>
-                    <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Stock*</label>
-                    <input type="text" name="stock" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" />
-                </div>
-
-                <div>
-                    <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email Id*</label>
-                    <input type="text" name="email" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" />
+                    <input type="text" name="price" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required />
                 </div>
 
                 <div className="sm:col-span-2">
-                    <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Supplier*</label>
-                    <input type="text" name="supplier" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" />
+                    <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Your Email ID*</label>
+                    <input type="text" name="email" className="w-full h-10 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required></input>
                 </div>
-
-
-                <div className="sm:col-span-2">
-                    <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Description*</label>
-                    <input type="text" name="description" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" />
-                </div>
-
                 <div className="sm:col-span-2">
                     <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Photo URL*</label>
-                    <input type="text" name="img" className="w-full h-10 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" ></input>
+                    <input type="text" name="img" className="w-full h-10 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required></input>
                 </div>
 
-                <div className="sm:col-span-2 flex justify-between items-center">
+                <div className="sm:col-span-2 flex justify-between items-center lg:mb-10">
                     <button className="inline-block bg-black hover:bg-gray-500  focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Update</button>
-
-                    <span className="text-gray-500 text-sm">*</span>
                 </div>
                 <ToastContainer />
 
-                <p className="text-gray-400 text-xs">By signing up to our newsletter you agree to our <a href="/" className="hover:text-indigo-500 active:text-indigo-600 underline transition duration-100">Privacy Policy</a>.</p>
             </form>
 
 
