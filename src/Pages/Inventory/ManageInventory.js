@@ -86,7 +86,7 @@ const ManageInventory = () => {
                                             </div>
                                         </div>
 
-                                        <div className="w-full sm:w-auto border-t sm:border-none pt-4 sm:pt-0 lg:mt-8">
+                                        <div className="w-full sm:w-auto border-t sm:border-none pt-4 sm:pt-0 ">
                                             <div className="pt-3 sm:pt-2 ml-4 md:ml-8 lg:ml-10 lg:mr-8 lg:mb-5">
                                                 <span className="block text-gray-800 md:text-lg font-bold">Total stock {product.stock}</span>
                                             </div>
@@ -94,15 +94,22 @@ const ManageInventory = () => {
                                                 <input name="reset" className=" w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-2 py-2 mb-5" required type="text" placeholder='Reset stock' />
                                             </form>
 
-                                            <div>
-                                                <button onClick={() => handelProductDelete(product._id)} className="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 ">Delete</button>
-                                            </div>
+
                                             <ToastContainer />
-                                            <div className='lg:mt-5'>
-                                                {/* <Link to={`/product/${product._id}`}> */}
-                                                <button className="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Update</button>
-                                                {/* </Link> */}
+                                            <div >
+                                                <button onClick={() => handelProductDelete(product._id)} className="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 lg:mt-1">Delete</button>
                                             </div>
+
+                                            <div className='lg:mt-2'>
+                                                <button className="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Restock</button>
+
+                                            </div>
+
+                                            <div className='lg:mt-2'>
+                                                <button className="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 ">Delevered</button>
+                                            </div>
+
+
 
 
                                         </div>

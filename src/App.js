@@ -3,11 +3,10 @@ import './App.css';
 import About from './Pages/About/About';
 import Blog from './Pages/Blog/Blog';
 import Contact from './Pages/Contact/Contact';
-import Error from './Pages/Error/Error';
+// import Error from './Pages/Error/Error';
 import Footer from './Pages/Footer/Footer';
 import Header from './Pages/Header/Header';
 import ManageInventory from './Pages/Inventory/ManageInventory';
-// import ProductUpdate from './Pages/Inventory/ProductUpdate';
 import AddItem from './Pages/Item/AddItem';
 import MyItems from './Pages/Item/MyItems';
 import Login from './Pages/Login/Login';
@@ -31,8 +30,8 @@ function App() {
         <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        {/* <Route path='/product/:id' element={<ProductUpdate></ProductUpdate>}></Route> */}
-        <Route path='*' element={<Error></Error>}></Route>
+
+        {/* <Route path='*' element={<Error></Error>}></Route> */}
 
       </Routes>
       <Footer></Footer>
