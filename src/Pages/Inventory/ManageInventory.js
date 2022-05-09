@@ -36,9 +36,6 @@ const ManageInventory = () => {
     }
 
 
-
-
-
     const delevardHandle = (product) => {
 
         console.log(product);
@@ -64,40 +61,12 @@ const ManageInventory = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                toast('Product updated');
             })
 
     }
 
 
-    const restoredHandle = (product, event) => {
-
-        const restock = event.target.stock.value;
-        const reStock = parseInt(product.stock) + parseInt(restock);
-
-        const renewProduct = {
-            name: product.name,
-            price: product.price,
-            email: product.email,
-            img: product.img,
-            supplier: product.supplier,
-            description: product.description,
-            stock: reStock,
-        }
-        const url = `http://localhost:5000/product/${product._id}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(renewProduct),
-        })
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data);
-                window.location.reload(true);
-            })
-
-    }
 
 
     return (
@@ -154,19 +123,12 @@ const ManageInventory = () => {
                                             <div className="pt-3 sm:pt-2 ml-4 md:ml-8 lg:ml-10 lg:mr-8 lg:mb-5">
                                                 <span className="block text-gray-800 md:text-lg font-bold">Total stock {product.stock}</span>
                                             </div>
-                                            <form action="">
-                                                <input name="reset" className=" w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-2 py-2 mb-5" required type="text" placeholder='Reset stock' />
-                                            </form>
-
 
                                             <ToastContainer />
 
                                             <Link to={`/update/${product._id}`}><button className=" text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16">Update</button></Link>
 
-                                            <div className='lg:mt-2'>
-                                                <button onClick={() => restoredHandle(product._id)} type='text' className="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Restock</button>
 
-                                            </div>
 
 
                                             <div >
