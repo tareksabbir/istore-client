@@ -8,7 +8,7 @@ const MyItems = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://whispering-temple-44728.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
@@ -20,7 +20,7 @@ const MyItems = () => {
         const proceed = window.confirm('Are you sure you want to delete this product?');
         if (proceed) {
             console.log(id);
-            const url = `http://localhost:5000/product/${id}`
+            const url = `https://whispering-temple-44728.herokuapp.com/product/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

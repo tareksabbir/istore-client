@@ -55,7 +55,7 @@ const Login = () => {
     const handleUserLogin = async event => {
         event.preventDefault();
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('http://localhost:5000/login', {
+        const { data } = await axios.post('https://whispering-temple-44728.herokuapp.com/login', {
             email,
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

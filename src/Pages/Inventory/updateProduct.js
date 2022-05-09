@@ -10,11 +10,11 @@ const UpdateProduct = () => {
     const [user] = useAuthState(auth);
     const [product, setProduct] = useState({})
     useEffect(() => {
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://whispering-temple-44728.herokuapp.com/product/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [])
+    }, [id])
 
 
     const productHandle = event => {
@@ -30,7 +30,7 @@ const UpdateProduct = () => {
         const product = { name, price, stock, img, description, supplier, email }
 
 
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://whispering-temple-44728.herokuapp.com/product/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

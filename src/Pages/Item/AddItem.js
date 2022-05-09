@@ -19,7 +19,7 @@ const AddItem = () => {
 
         const product = { name, price, stock, img, description, supplier, email }
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://whispering-temple-44728.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

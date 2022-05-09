@@ -9,7 +9,7 @@ const ManageInventory = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://whispering-temple-44728.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
@@ -19,7 +19,7 @@ const ManageInventory = () => {
         const proceed = window.confirm('Are you sure you want to delete this product?');
         if (proceed) {
             console.log(id);
-            const url = `http://localhost:5000/product/${id}`
+            const url = `https://whispering-temple-44728.herokuapp.com/product/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -50,7 +50,7 @@ const ManageInventory = () => {
             description: product.description,
             stock: newStock,
         }
-        const url = `http://localhost:5000/product/${product._id}`;
+        const url = `https://whispering-temple-44728.herokuapp.com/product/${product._id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
