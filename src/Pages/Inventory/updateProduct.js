@@ -26,6 +26,7 @@ const UpdateProduct = () => {
         const img = event.target.img.value;
         const supplier = event.target.supplier.value;
         const description = event.target.description.value;
+
         const product = { name, price, stock, img, description, supplier, email }
 
 
@@ -110,12 +111,6 @@ const UpdateProduct = () => {
                 </div>
             </div>
 
-
-
-
-
-
-
             <div>
                 <div className="bg-white py-6 sm:py-8 lg:py-6 lg:mb-10">
                     <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
@@ -168,10 +163,6 @@ const UpdateProduct = () => {
                     </div>
                 </div>
             </div>
-
-
-
-
         </>
     );
 };
