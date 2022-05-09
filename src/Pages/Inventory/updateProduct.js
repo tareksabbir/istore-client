@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+import auth from '../../firebase.init';
 
 
 const UpdateProduct = () => {
     const { id } = useParams();
+    const [user] = useAuthState(auth);
     const [product, setProduct] = useState({})
     useEffect(() => {
         const url = `http://localhost:5000/product/${id}`;
@@ -22,7 +26,6 @@ const UpdateProduct = () => {
         const img = event.target.img.value;
         const supplier = event.target.supplier.value;
         const description = event.target.description.value;
-
         const product = { name, price, stock, img, description, supplier, email }
 
 
@@ -41,6 +44,7 @@ const UpdateProduct = () => {
                 event.target.reset();
             })
     }
+
 
 
 
@@ -132,7 +136,7 @@ const UpdateProduct = () => {
 
                             <div>
                                 <label className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email Id*</label>
-                                <input type="text" name="email" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required />
+                                <input type="text" name="email" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required value={user.email} />
                             </div>
 
                             <div className="sm:col-span-2">

@@ -14,6 +14,8 @@ const MyItems = () => {
     }, [])
     const [user] = useAuthState(auth);
 
+
+
     const handelProductDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete this product?');
         if (proceed) {
@@ -33,8 +35,6 @@ const MyItems = () => {
         }
 
     }
-
-
 
 
 
@@ -81,22 +81,8 @@ const MyItems = () => {
                                                     </tr>
                                                 </tbody>
                                             </table>
-
-
-
-
                                         </div>)
                                     }
-
-
-
-
-
-
-
-
-
-
                                 </div>
                             </div>
                         </div>

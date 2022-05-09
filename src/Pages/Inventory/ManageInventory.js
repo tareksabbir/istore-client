@@ -35,6 +35,71 @@ const ManageInventory = () => {
 
     }
 
+
+
+
+
+    const delevardHandle = (product) => {
+
+        console.log(product);
+        const newStock = parseInt(product.stock) - 1;
+
+        const newProduct = {
+            name: product.name,
+            price: product.price,
+            email: product.email,
+            img: product.img,
+            supplier: product.supplier,
+            description: product.description,
+            stock: newStock,
+        }
+        const url = `http://localhost:5000/product/${product._id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newProduct),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+
+    }
+
+
+    const restoredHandle = (product, event) => {
+
+        const restock = event.target.stock.value;
+        const reStock = parseInt(product.stock) + parseInt(restock);
+
+        const renewProduct = {
+            name: product.name,
+            price: product.price,
+            email: product.email,
+            img: product.img,
+            supplier: product.supplier,
+            description: product.description,
+            stock: reStock,
+        }
+        const url = `http://localhost:5000/product/${product._id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(renewProduct),
+        })
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data);
+                window.location.reload(true);
+            })
+
+    }
+
+
     return (
         <>
             <div className="mb-6 sm:mb-10 lg:mb-10">
@@ -99,7 +164,7 @@ const ManageInventory = () => {
                                             <Link to={`/update/${product._id}`}><button className=" text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16">Update</button></Link>
 
                                             <div className='lg:mt-2'>
-                                                <button type='text' className="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Restock</button>
+                                                <button onClick={() => restoredHandle(product._id)} type='text' className="text-white hover:text-black active:text-indigo-700 text-sm font-semibold transition duration-100 bg-gray-500 px-2 py-1  rounded lg:ml-16 ">Restock</button>
 
                                             </div>
 
@@ -108,7 +173,7 @@ const ManageInventory = () => {
                                                 <button onClick={() => handelProductDelete(product._id)} className="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 lg:mt-1">Delete</button>
                                             </div>
                                             <div className='lg:mt-2'>
-                                                <button className="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16 ">Delevered</button>
+                                                <button onClick={() => delevardHandle(product)} className="text-white hover:text-indigo-600 active:text-indigo-700 text-sm font-semibold transition duration-100 bg-black px-2 py-1  rounded lg:ml-16">Delevered</button>
                                             </div>
                                         </div>
                                     </div>

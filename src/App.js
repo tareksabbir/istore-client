@@ -3,7 +3,7 @@ import './App.css';
 import About from './Pages/About/About';
 import Blog from './Pages/Blog/Blog';
 import Contact from './Pages/Contact/Contact';
-// import Error from './Pages/Error/Error';
+import Error from './Pages/Error/Error';
 import Footer from './Pages/Footer/Footer';
 import Header from './Pages/Header/Header';
 import ManageInventory from './Pages/Inventory/ManageInventory';
@@ -33,7 +33,7 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/update/:id' element={<UpdateProduct></UpdateProduct>}></Route>
 
-        {/* <Route path='*' element={<Error></Error>}></Route> */}
+        <Route path='*' element={<Error></Error>}></Route>
 
       </Routes>
       <Footer></Footer>
